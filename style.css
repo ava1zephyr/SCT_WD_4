@@ -233,15 +233,6 @@ input[type="text"]::placeholder {
     color: #6b9080;
 }
 
-@media (max-width: 768px) {
-    h1 {
-        font-size: 2rem;
-    }
-    .input-wrap {
-        flex-direction: column;
-    }
-}
-
 .filters {
     text-align: center;
     margin-bottom: 1.5rem;
@@ -265,4 +256,99 @@ input[type="text"]::placeholder {
 
 .filter-btn.active {
     background: #2e4639;
+}
+
+@media (max-width: 768px) {
+    body {
+        padding: 1rem;
+    }
+
+    h1 {
+        font-size: 2rem;
+    }
+
+    .subtitle {
+        font-size: 1rem;
+        margin-bottom: 2rem;
+    }
+
+    .input-area {
+        padding: 1.5rem;
+    }
+
+    .input-wrap {
+        flex-direction: column;
+    }
+
+    #dateTime {
+        min-width: 100%;
+    }
+
+    .btn {
+        width: 100%;
+    }
+
+    .tasks {
+        padding: 1.5rem;
+    }
+
+    .task {
+        flex-wrap: wrap;
+        padding: 1rem;
+    }
+
+    .info {
+        flex: 1 1 100%;
+        margin-bottom: 0.5rem;
+    }
+
+    .actions {
+        width: 100%;
+        justify-content: flex-end;
+    }
+
+    .filter-btn {
+        padding: 0.5rem 1rem;
+        margin: 0 0.25rem;
+        font-size: 0.9rem;
+    }
+}
+
+@media (max-width: 480px) {
+    h1 {
+        font-size: 1.5rem;
+    }
+
+    .subtitle {
+        font-size: 0.9rem;
+    }
+
+    input[type="text"],
+    #dateTime,
+    .btn {
+        padding: 0.8rem 1rem;
+        font-size: 0.9rem;
+    }
+
+    .task {
+        padding: 0.8rem;
+    }
+
+    .txt {
+        font-size: 1rem;
+    }
+
+    .dt {
+        font-size: 0.8rem;
+    }
+
+    .icon-btn {
+        width: 36px;
+        height: 36px;
+    }
+
+    .filter-btn {
+        padding: 0.4rem 0.8rem;
+        font-size: 0.85rem;
+    }
 }
