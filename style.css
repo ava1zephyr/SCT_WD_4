@@ -35,14 +35,14 @@ body::before {
 
 h1 {
     font-size: 3rem;
-    color: #e1fbea;
+    color: #d0e8d8;
     margin-bottom: 0.5rem;
     text-align: center;
     text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
 }
 
 .subtitle {
-    color: #c8ddd1;
+    color: #b2e0c7;
     font-size: 1.1rem;
     text-align: center;
     margin-bottom: 3rem;
@@ -240,4 +240,29 @@ input[type="text"]::placeholder {
     .input-wrap {
         flex-direction: column;
     }
+}
+
+.filters {
+    text-align: center;
+    margin-bottom: 1.5rem;
+}
+
+.filter-btn {
+    padding: 0.6rem 1.2rem;
+    margin: 0 0.5rem;
+    border: none;
+    border-radius: 6px;
+    background: #4a6b5a;
+    color: white;
+    cursor: pointer;
+    font-weight: 600;
+    transition: all 0.2s;
+}
+
+.filter-btn:hover {
+    background: #5a7d6a;
+}
+
+.filter-btn.active {
+    background: #2e4639;
 }
