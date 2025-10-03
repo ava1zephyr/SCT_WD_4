@@ -1,14 +1,23 @@
-// my task data
+//task data
 let tasks = [];
 let editId = null;
+let currentFilter = "all";
 
 const inp = document.getElementById('inp');
 const dateTime = document.getElementById('dateTime');
 const addBtn = document.getElementById('addBtn');
 const list = document.getElementById('list');
+const filterBtns = document.querySelectorAll('.filter-btn');
 
 function render() {
-    if (tasks.length === 0) {
+    let filteredTasks = tasks;
+    if (currentFilter === "completed") {
+        filteredTasks = tasks.filter(t => t.done);
+    } else if (currentFilter === "pending") {
+        filteredTasks = tasks.filter(t => !t.done);
+    }
+
+    if (filteredTasks.length === 0) {
         list.innerHTML = `<div class="empty">
             <i class="fas fa-clipboard-list"></i>
             <p>No tasks yet. Add one to get started!</p>
@@ -17,8 +26,8 @@ function render() {
     }
 
     let html = '';
-    for(let i = 0; i < tasks.length; i++) {
-        const t = tasks[i];
+    for (let i = 0; i < filteredTasks.length; i++) {
+        const t = filteredTasks[i];
         html += `<div class="task ${t.done ? 'done' : ''} ${editId === t.id ? 'editing' : ''}" data-id="${t.id}">
             <div class="chk ${t.done ? 'active' : ''}" onclick="toggle(${t.id})">
                 ${t.done ? '<i class="fas fa-check"></i>' : ''}
@@ -92,11 +101,19 @@ function del(id) {
     }
     render();
 }
+filterBtns.forEach(btn => {
+    btn.addEventListener('click', () => {
+        filterBtns.forEach(b => b.classList.remove('active'));
+        btn.classList.add('active');
+        currentFilter = btn.getAttribute('data-filter');
+        render();
+    });
+});
 
 addBtn.addEventListener('click', addTask);
-
 inp.addEventListener('keypress', e => {
     if (e.key === 'Enter') addTask();
 });
 
+// initialize
 render();
