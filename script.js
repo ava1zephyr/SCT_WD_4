@@ -84,7 +84,6 @@ function edit(id) {
 
 function del(id) {
     tasks = tasks.filter(t => t.id !== id);
-    // reset form if we're deleting the task being edited
     if (editId === id) {
         editId = null;
         inp.value = '';
@@ -100,5 +99,4 @@ inp.addEventListener('keypress', e => {
     if (e.key === 'Enter') addTask();
 });
 
-// initialize
 render();
