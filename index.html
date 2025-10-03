@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>To-Do App</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="container">
+        <h1>My To-do list</h1>
+        <p class="subtitle">Stay organized and productive</p>
+
+        <div class="input-area">
+            <div class="input-wrap">
+                <input type="text" id="inp" placeholder="What needs to be done?">
+                <input type="datetime-local" id="dateTime">
+                <button class="btn" id="addBtn">
+                    <i class="fas fa-plus"></i>
+                    Add Task
+                </button>
+            </div>
+        </div>
+
+        <div class="tasks">
+            <h2 class="sec-title">
+                <i class="fas fa-list-check"></i>
+                All Tasks
+            </h2>
+            <div id="list">
+                <div class="empty">
+                    <i class="fas fa-clipboard-list"></i>
+                    <p>No tasks yet. Add one to get started!</p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>

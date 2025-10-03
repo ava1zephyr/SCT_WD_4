@@ -1,0 +1,243 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background-image: url('1.jpg');
+    background-size: cover;
+    background-position: center;
+    background-attachment: fixed;
+    background-repeat: no-repeat;
+    color: #2e2d1d;
+    min-height: 100vh;
+    padding: 2rem;
+    position: relative;
+}
+
+body::before {
+    content: '';
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(212, 217, 200, 0.03);
+    z-index: -1;
+}
+
+.container {
+    max-width: 800px;
+    margin: 0 auto;
+}
+
+h1 {
+    font-size: 3rem;
+    color: #e1fbea;
+    margin-bottom: 0.5rem;
+    text-align: center;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+}
+
+.subtitle {
+    color: #c8ddd1;
+    font-size: 1.1rem;
+    text-align: center;
+    margin-bottom: 3rem;
+    text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.5);
+}
+
+.input-area {
+    background: rgba(20, 35, 30, 0.75);
+    padding: 2rem;
+    border-radius: 8px;
+    margin-bottom: 2rem;
+    border: 1px solid rgba(80, 100, 85, 0.3);
+    backdrop-filter: blur(10px);
+}
+
+.input-wrap {
+    display: flex;
+    gap: 1rem;
+    margin-bottom: 1rem;
+}
+
+input[type="text"] {
+    flex: 1;
+    padding: 1rem 1.5rem;
+    border: 2px solid rgba(80, 100, 85, 0.4);
+    border-radius: 6px;
+    font-size: 1rem;
+    background: rgba(30, 45, 40, 0.6);
+    color: #d0e8d8;
+}
+
+input[type="text"]:focus {
+    outline: none;
+    border-color: #6b9080;
+    background: rgba(30, 45, 40, 0.8);
+}
+
+input[type="text"]::placeholder {
+    color: #8fb5a0;
+}
+
+#dateTime {
+    padding: 1rem 1.5rem;
+    border: 2px solid rgba(80, 100, 85, 0.4);
+    border-radius: 6px;
+    background: rgba(30, 45, 40, 0.6);
+    color: #d0e8d8;
+    min-width: 200px;
+}
+
+#dateTime:focus {
+    outline: none;
+    border-color: #6b9080;
+    background: rgba(30, 45, 40, 0.8);
+}
+
+.btn {
+    padding: 1rem 2rem;
+    border: none;
+    border-radius: 6px;
+    font-weight: 600;
+    cursor: pointer;
+    background: #4a6b5a;
+    color: white;
+    transition: all 0.2s;
+}
+
+.btn:hover {
+    background: #5a7d6a;
+    transform: translateY(-2px);
+    box-shadow: 0 4px 12px rgba(74, 107, 90, 0.4);
+}
+
+.tasks {
+    background: rgba(20, 35, 30, 0.75);
+    padding: 2rem;
+    border-radius: 8px;
+    min-height: 400px;
+    border: 1px solid rgba(80, 100, 85, 0.3);
+    backdrop-filter: blur(10px);
+}
+
+.sec-title {
+    font-size: 1.5rem;
+    margin-bottom: 1.5rem;
+    color: #d0e8d8;
+}
+
+.task {
+    background: rgba(30, 45, 40, 0.6);
+    padding: 1.5rem;
+    border-radius: 6px;
+    margin-bottom: 1rem;
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    border: 1px solid rgba(80, 100, 85, 0.3);
+}
+
+.task.done {
+    opacity: 0.6;
+}
+
+.task.done .txt {
+    text-decoration: line-through;
+}
+
+.task.editing {
+    border: 2px solid #6b9080;
+    background: rgba(35, 50, 45, 0.8);
+}
+
+.chk {
+    width: 24px;
+    height: 24px;
+    border: 2px solid #6b9080;
+    border-radius: 4px;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-shrink: 0;
+}
+
+.chk.active {
+    background: #4a6b5a;
+    border-color: #6b9080;
+    color: white;
+}
+
+.info {
+    flex: 1;
+}
+
+.txt {
+    font-size: 1.1rem;
+    margin-bottom: 0.3rem;
+    color: #d0e8d8;
+}
+
+.dt {
+    font-size: 0.9rem;
+    color: #8fb5a0;
+}
+
+.actions {
+    display: flex;
+    gap: 0.5rem;
+}
+
+.icon-btn {
+    width: 40px;
+    height: 40px;
+    border-radius: 6px;
+    border: none;
+    cursor: pointer;
+    transition: transform 0.15s;
+}
+
+.edit-btn {
+    background: #5a7d6a;
+    color: white;
+}
+
+.edit-btn:hover {
+    transform: scale(1.1);
+}
+
+.del-btn {
+    background: #8b4545;
+    color: white;
+}
+
+.del-btn:hover {
+    transform: scale(1.1);
+}
+
+.empty {
+    text-align: center;
+    padding: 3rem;
+    color: #8fb5a0;
+}
+
+.empty i {
+    font-size: 4rem;
+    margin-bottom: 1rem;
+    opacity: 0.4;
+    color: #6b9080;
+}
+
+@media (max-width: 768px) {
+    h1 {
+        font-size: 2rem;
+    }
+    .input-wrap {
+        flex-direction: column;
+    }
+}
